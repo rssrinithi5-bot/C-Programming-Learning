@@ -1,0 +1,19 @@
+int mode = 2;
+
+switch(mode)
+{
+    case 1:
+        printf("Pump OFF");
+        break;
+
+    case 2:
+        printf("Pump ON");
+        break;
+
+    case 3:
+        printf("Pump AUTO");
+        break;
+
+    default:
+        printf("Invalid Mode");
+}
