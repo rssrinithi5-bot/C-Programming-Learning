@@ -1,0 +1,74 @@
+#include <stdio.h>
+
+// Parameter + Return
+int add(int a, int b)
+{
+    return a + b;
+}
+
+// Call by Value
+void changeValue(int x)
+{
+    x = 100;
+}
+
+// Pointer + Function
+void changeOriginal(int *x)
+{
+    *x = 100;
+}
+
+// Array + Function
+int arraySum(int arr[], int n)
+{
+    int sum = 0;
+
+    for(int i = 0; i < n; i++)
+    {
+        sum += arr[i];
+    }
+
+    return sum;
+}
+
+// Recursion
+int factorial(int n)
+{
+    if(n == 0)
+        return 1;
+
+    return n * factorial(n - 1);
+}
+
+int main()
+{
+    // Function + Parameter + Return
+    int result = add(10, 20);
+    printf("Addition = %d\n", result);
+
+    // Call by Value
+    int x = 50;
+
+    changeValue(x);
+
+    printf("After Call by Value = %d\n", x);
+
+    // Pointer + Function
+    changeOriginal(&x);
+
+    printf("After Pointer Function = %d\n", x);
+
+    // Array + Function
+    int numbers[] = {10, 20, 30, 40, 50};
+
+    int total = arraySum(numbers, 5);
+
+    printf("Array Sum = %d\n", total);
+
+    // Recursion
+    int fact = factorial(5);
+
+    printf("Factorial = %d\n", fact);
+
+    return 0;
+}
