@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main()
+{
+    char name[50];
+    int length = 0;
+
+    printf("Enter your name: ");
+    scanf("%s", name);
+
+    for(int i = 0; name[i] != '\0'; i++)
+    {
+        length++;
+    }
+
+    printf("Name = %s\n", name);
+    printf("Length = %d\n", length);
+
+    return 0;
+}
