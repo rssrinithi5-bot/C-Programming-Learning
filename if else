@@ -1,0 +1,23 @@
+if(condition)
+{
+    // TRUE
+}
+else
+{
+    // FALSE
+}
+
+int temperature = 40;
+
+if(temperature > 45)
+{
+    printf("DANGER");
+}
+else if(temperature > 35)
+{
+    printf("WARNING");
+}
+else
+{
+    printf("NORMAL");
+}
