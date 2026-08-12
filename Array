@@ -1,0 +1,34 @@
+#include <stdio.h>
+
+int main()
+{
+    int sensor[5];
+    int sum = 0;
+    int max;
+
+    printf("Enter 5 sensor values:\n");
+
+    for(int i = 0; i < 5; i++)
+    {
+        printf("Sensor %d: ", i + 1);
+        scanf("%d", &sensor[i]);
+    }
+
+    max = sensor[0];
+
+    for(int i = 0; i < 5; i++)
+    {
+        sum += sensor[i];
+
+        if(sensor[i] > max)
+        {
+            max = sensor[i];
+        }
+    }
+
+    printf("\nTotal = %d\n", sum);
+    printf("Average = %.2f\n", (float)sum / 5);
+    printf("Highest Sensor Value = %d\n", max);
+
+    return 0;
+}
