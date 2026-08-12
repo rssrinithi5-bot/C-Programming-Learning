@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    char name[20] = "Sri";
+    char copy[20];
+    char lastName[] = " Nithi";
+
+    // 1. strlen() - Find length
+    printf("Length = %zu\n", strlen(name));
+
+    // 2. strcpy() - Copy string
+    strcpy(copy, name);
+    printf("Copied Name = %s\n", copy);
+
+    // 3. strcat() - Join strings
+    strcat(name, lastName);
+    printf("Full Name = %s\n", name);
+
+    // 4. strcmp() - Compare strings
+    if(strcmp(name, copy) == 0)
+    {
+        printf("Both strings are same\n");
+    }
+    else
+    {
+        printf("Both strings are different\n");
+    }
+
+    return 0;
+}
