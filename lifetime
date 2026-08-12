@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+void sensor()
+{
+    int temperature = 30;
+
+    printf("Temperature = %d\n", temperature);
+}
+
+int main()
+{
+    sensor();
+
+    return 0;
+}
