@@ -1,0 +1,40 @@
+#include <stdio.h>
+
+int checkWaterLevel(int level)
+{
+    if(level < 20)
+        return 1;
+    else
+        return 0;
+}
+
+int calculatePower(int voltage, int current)
+{
+    return voltage * current;
+}
+
+int main()
+{
+    int waterLevel, voltage, current;
+
+    printf("Enter Water Level: ");
+    scanf("%d", &waterLevel);
+
+    printf("Enter Voltage: ");
+    scanf("%d", &voltage);
+
+    printf("Enter Current: ");
+    scanf("%d", &current);
+
+    int lowWater = checkWaterLevel(waterLevel);
+    int power = calculatePower(voltage, current);
+
+    printf("\nPower = %d W\n", power);
+
+    if(lowWater == 1)
+        printf("Warning: Water Level LOW!\n");
+    else
+        printf("Water Level NORMAL\n");
+
+    return 0;
+}
