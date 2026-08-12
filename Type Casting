@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+int main()
+{
+    int total = 10;
+    int count = 3;
+
+    float average;
+
+    average = (float)total / count;
+
+    printf("Average = %.2f\n", average);
+
+    return 0;
+}
