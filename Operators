@@ -1,0 +1,77 @@
+#include <stdio.h>
+
+int main()
+{
+    int waterLevel;
+    int pumpVoltage;
+    int pumpCurrent;
+    int pumpStatus = 0;
+    int warning = 0;
+
+    printf("Enter Water Level (%%): ");
+    scanf("%d", &waterLevel);
+
+    printf("Enter Pump Voltage (V): ");
+    scanf("%d", &pumpVoltage);
+
+    printf("Enter Pump Current (A): ");
+    scanf("%d", &pumpCurrent);
+
+    // 1. Arithmetic Operator
+    int power = pumpVoltage * pumpCurrent;
+
+    printf("\nPump Power = %d W\n", power);
+
+    // 2. Relational + Logical Operators
+    if(waterLevel < 20 && pumpCurrent > 5)
+    {
+        warning = 1;
+    }
+
+    // 3. Assignment Operator
+    pumpStatus = warning;
+
+    // 4. Increment Operator
+    waterLevel++;
+
+    // 5. Decrement Operator
+    waterLevel--;
+
+    // 6. Conditional / Ternary Operator
+    char *status = (warning == 1) ? "WARNING" : "NORMAL";
+
+    printf("Tank Status = %s\n", status);
+
+    // 7. Logical OR Operator
+    if(waterLevel < 10 || pumpCurrent > 10)
+    {
+        printf("Emergency: Check Water Pump!\n");
+    }
+
+    // 8. Bitwise Operators
+    int controlRegister = 0;
+
+    // Set bit 2 - Turn ON pump
+    controlRegister |= (1 << 2);
+
+    printf("Control Register = %d\n", controlRegister);
+
+    // Check bit 2
+    if(controlRegister & (1 << 2))
+    {
+        printf("Pump Control Bit is ON\n");
+    }
+
+    // 9. sizeof Operator
+    printf("Size of int = %zu bytes\n", sizeof(int));
+
+    return 0;
+}
+
+1 << 2       → Bit 2 position create pannum
+|=           → Bit 2 ON pannum
+&            → Bit 2 ON/OFF check pannum
+
+sizeof() → Memory size find
+%zu      → Size print panna
+return 0 → Program successful-ah end
