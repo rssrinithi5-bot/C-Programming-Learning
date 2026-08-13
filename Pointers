@@ -1,0 +1,80 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+struct Sensor
+{
+    int temperature;
+    int voltage;
+};
+
+void updateTemperature(int *temp)
+{
+    *temp = *temp + 5;
+}
+
+int main()
+{
+    int temperature = 30;
+
+    // Pointer + Variable
+    int *p = &temperature;
+
+    printf("Temperature = %d\n", *p);
+
+    // Modify using pointer
+    *p = 35;
+
+    // Pointer + Function
+    updateTemperature(&temperature);
+
+    printf("Updated Temperature = %d\n", temperature);
+
+
+    // Pointer + Array
+    int readings[3] = {30, 35, 40};
+    int *ptr = readings;
+
+    printf("\nSensor Readings:\n");
+
+    for(int i = 0; i < 3; i++)
+    {
+        printf("%d ", *(ptr + i));
+    }
+
+
+    // Pointer + Structure
+    struct Sensor s = {40, 230};
+    struct Sensor *sp = &s;
+
+    printf("\n\nTemperature = %d\n", sp->temperature);
+    printf("Voltage = %d\n", sp->voltage);
+
+
+    // Pointer to Pointer
+    int **pp = &p;
+
+    printf("Using pointer to pointer = %d\n", **pp);
+
+
+    // Dynamic Memory
+    int *data = malloc(3 * sizeof(int));
+
+    if(data != NULL)
+    {
+        data[0] = 100;
+        data[1] = 200;
+        data[2] = 300;
+
+        printf("\nDynamic Data:\n");
+
+        for(int i = 0; i < 3; i++)
+        {
+            printf("%d ", data[i]);
+        }
+
+        free(data);
+        data = NULL;
+    }
+
+    return 0;
+}
